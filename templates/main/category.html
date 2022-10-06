@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+{% block title %}Welcome to DARK WEBX
+{% endblock title %}
+
+
+{% block content %}
+<section class="py-5">
+	<div class="container-fluid p-0">
+		<div class="row">
+			<!-- SHOP SIDEBAR-->
+			{% include 'sidebar.html' %}
+			<!-- SHOP LISTING-->
+			<div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
+
+				<div class="row">
+					<!-- PRODUCT-->
+					{% for product in products %}
+					<div class="col-lg-4 col-sm-6">
+						<div class="product text-center">
+							<div class="mb-3 position-relative">
+
+								<div class="badge text-white bg-"></div>
+								
+								<a class="d-block" href="{% url 'amydo:product_detail' product.slug %}">
+									{% if product.category.title == 'Money exchange' %}
+									<video controls autoplay>
+										<source src="{{product.image.url}}" type="video/mp4">
+										<source src="{{product.image.url}}" type="video/ogg">
+										Your browser does not support the video tag.
+									</video>
+									{% else %}
+									<img class="img-fluid w-100" style="height: 18rem;" src="{{product.image.url}}"
+										alt="...">
+								{% endif %}</a>
+
+								<div class="product-overlay">
+									<ul class="mb-0 list-inline">
+										<li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark"
+												href="https://api.whatsapp.com/send?phone=00971552055696&text=hey,%20I%20want%20_________."
+												target='_blank'><i class="fab fa-whatsapp"></i></a></li>
+										<li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="#customernotice"
+												data-bs-toggle="modal">Order Now</a>
+										</li>
+										<li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark" href="#productView{{product.id}}"
+												data-bs-toggle="modal"><i class="fas fa-expand"></i></a></li>
+									</ul>
+								</div>
+							</div>
+							<h6> <a class="reset-anchor"
+									href="{% url 'amydo:product_detail' product.slug %}">{{product.name}}</a></h6>
+							<p class="small text-muted">${{product.price|floatformat:0|intcomma}}</p>
+						</div>
+					</div>
+
+					<!--  Modal -->
+					<div class="modal fade" id="productView{{product.id}}" tabindex="-1">
+						<div class="modal-dialog modal-lg modal-dialog-centered">
+							<div class="modal-content overflow-hidden border-0">
+								<button class="btn-close p-4 position-absolute top-0 end-0 z-index-20 shadow-0"
+									type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+								<div class="modal-body p-0">
+									<div class="row align-items-stretch">
+										<div class="col-lg-6 p-lg-0"><a
+												class="glightbox product-view d-block h-100 bg-cover bg-center"
+												style="background: url({{product.category.image.url}})"
+												href="{{product.image.url}}" data-gallery="gallery1"
+												data-glightbox="Red digital smartwatch"></a><a class="glightbox d-none"
+												href="{{product.image.url}}" data-gallery="gallery1"
+												data-glightbox="Red digital smartwatch"></a><a class="glightbox d-none"
+												href="{{product.image.url}}" data-gallery="gallery1"
+												data-glightbox="Red digital smartwatch"></a></div>
+										<div class="col-lg-6">
+											<div class="p-4 my-md-4">
+												<ul class="list-inline mb-2">
+													<li class="list-inline-item m-0"><i
+															class="fas fa-star small text-warning"></i></li>
+													<li class="list-inline-item m-0 1"><i
+															class="fas fa-star small text-warning"></i></li>
+													<li class="list-inline-item m-0 2"><i
+															class="fas fa-star small text-warning"></i></li>
+													<li class="list-inline-item m-0 3"><i
+															class="fas fa-star small text-warning"></i></li>
+													<li class="list-inline-item m-0 4"><i
+															class="fas fa-star small text-warning"></i></li>
+												</ul>
+												<h2 class="h4">{{product.name}}</h2>
+												<p class="text-muted">$250</p>
+												<p class="text-sm mb-4">
+													{{product.description}}
+												</p>
+												<div class="row align-items-stretch mb-4 gx-0">
+													<div class="col-sm-7">
+														<div
+															class="border d-flex align-items-center justify-content-between py-1 px-3">
+															<span
+																class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
+															<div class="quantity">
+																<button class="dec-btn p-0"><i
+																		class="fas fa-caret-left"></i></button>
+																<input class="form-control border-0 shadow-0 p-0"
+																	type="text" value="1">
+																<button class="inc-btn p-0"><i
+																		class="fas fa-caret-right"></i></button>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-5"><a class="btn btn-sm btn-dark" href="#customernotice" data-bs-toggle="modal">Order Now</a></div>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{% comment %} customer notice modal {% endcomment %}
+					<div class="modal fade" id="customernotice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title text-danger" id="exampleModalLabel">Important Notice</h5>
+									<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>
+										When you contact us make sure you're ready to reply and complete your order!
+									</p>
+									<p>
+										If you're not ready to place your order please do not contact us!
+					
+										We're doing our best to avoid time wasters 🙏
+									</p>
+									<p>
+										When you contact us go straight to the point!
+									</p>
+									<ul style="list-style-type:none;">
+										<li>
+											<i class="fa fa-check text-danger"></i>What do you want?
+										</li>
+										<li>
+											<i class="fa fa-check text-danger"></i> Quantity?
+										</li>
+										<li>
+											<i class="fa fa-check text-danger"></i>Where do you want it to be delivere?
+										</li>
+										<li>
+											<i class="fa fa-check text-danger"></i>Payment method (crypto recommended)
+										</li>
+										<li>
+											<i class="fa fa-check text-danger"></i>Send your details
+										</li>
+									</ul>
+									<p>
+					
+										Thank you.
+									</p>
+								</div>
+								<div class="modal-footer">
+									<a type="button" class="btn btn-primary" href="{% url 'amydo:product_detail' product.slug %}">See
+										Details</a>
+					
+									<a type="button" class="btn btn-success"
+										href="https://api.whatsapp.com/send?phone=00971552055696&text=hey,%20I%20want%20_________."
+										target='_blank'>
+										Continue
+									</a>
+					
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+				</div>
+				<!-- PAGINATION-->
+
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+{% endblock content %}

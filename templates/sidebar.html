@@ -1,0 +1,14 @@
+<!-- SHOP SIDEBAR-->
+              <div class="col-lg-3 order-2 order-lg-1">
+                <h5 class="text-uppercase mb-4">Categories</h5>
+              
+  
+                  {% for cat in all_category %}
+                 <div class="py-2 px-4 bg-dark text-white mb-3"><strong class="small text-uppercase fw-bold">
+                  <a href=" {% url 'amydo:category' cat.slug %} ">
+                  {{cat.title}}
+                  </a>
+                </strong></div>
+                  {% endfor %}
+
+              </div>
