@@ -12,8 +12,8 @@
     <div class="container py-5">
       <div class="row px-4 px-lg-5">
         <div class="col-lg-12">
-          <h1 class="text-uppercase font-weight-bold mb-2 text-danger bg-primary bg-opacity-75 ">Dark Webx Pharmaceuticals</h1>
-          <h1 class="h2 text-uppercase mb-3 text-danger bg-primary bg-opacity-75">SSD Items and Fast Money Exchange</h1><a class="btn btn-dark">Browse
+          <h2 class="text-uppercase font-weight-bold mb-2 text-danger">Dark Webx Pharmaceuticals</h2>
+          <h1 class="h2 text-uppercase mb-3 text-danger">SSD Chemicals</h1><a class="btn btn-dark">Browse
             collections</a>
         </div>
       </div>
@@ -27,7 +27,7 @@
     </header>
     <div class="row">
       {% for cat in category %}
-      <div class="col-md-4"><a class="category-item" href=" {% url 'amydo:category' cat.slug %} "><img class="img img-fluid h-200" src="{{cat.image.url}}"
+      <div class="col-md-4 my-2"><a class="category-item" href=" {% url 'amydo:category' cat.slug %} "><img class="img img-fluid h-200" src="{{cat.image.url}}"
             alt="" /><strong class="category-item-title">{{cat.title}}</strong></a>
       </div>
       {% endfor %}
@@ -215,26 +215,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- NEWSLETTER-->
-  <section class="py-5">
-    <div class="container p-0">
-      <div class="row gy-3">
-        <div class="col-lg-6">
-          <h5 class="text-uppercase">Let's be friends!</h5>
-          <p class="text-sm text-muted mb-0">Nisi nisi tempor consequat laboris nisi.</p>
-        </div>
-        <div class="col-lg-6">
-          <form action="#">
-            <div class="input-group">
-              <input class="form-control form-control-lg" type="email" placeholder="Enter your email address"
-                aria-describedby="button-addon2">
-              <button class="btn btn-dark" id="button-addon2" type="submit">Subscribe</button>
-            </div>
-          </form>
         </div>
       </div>
     </div>
