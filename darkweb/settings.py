@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ybvd6f4s+c81r&ifmes@98@vg8s0kkztm)2@^y9zl2l@og5)(s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'darkweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql",
+        'ENGINE': "django.db.backends.postgresql_psycopg2",
         'HOST': "db.ltsnrgljkrmrxwbrfhhj.supabase.co",
         'NAME': "postgres",
         'USER': "postgres",
