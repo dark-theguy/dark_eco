@@ -138,6 +138,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://appname.herokuapp.com'
+]
+
 # SECURE_SSL_REDIRECT = True
 
 # SESSION_COOKIE_SECURE = True
