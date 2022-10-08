@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'bvd6f4s+c81r&ifmes@98@vg8s0kkztm)2@^y9zl2l@og5)(sdjango-insecure-ybvd6f4s+c81r&ifmes@98@vg8s0kkztm)2@^y9zl2l@og5)(s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -140,7 +140,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE =True 
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE =True 
