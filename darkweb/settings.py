@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'bvd6f4s+c81r&ifmes@98@vg8s0kkztm)2@^y9zl2l@og5)(sdjango-insecure-ybvd6f4s+c81r&ifmes@98@vg8s0kkztm)2@^y9zl2l@og5)(s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
