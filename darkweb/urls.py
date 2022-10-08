@@ -6,7 +6,7 @@ from django.urls import include, re_path
 from django.views.static import serve
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin-sha-rjah/', admin.site.urls),
     path('', include('main.urls')),
     re_path(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT}),
