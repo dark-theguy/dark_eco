@@ -139,7 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://appname.herokuapp.com'
+    'https://sharjah-pharma.com'
 ]
 
 # SECURE_SSL_REDIRECT = True
