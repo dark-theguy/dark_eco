@@ -23,11 +23,12 @@
   <section class="pt-5">
     <header class="text-center">
       <p class="small text-muted small text-uppercase mb-1">All Available Product</p>
-      <h2 class="h5 text-uppercase mb-4">Limited in stock and Ready ready for Delivery</h2>
+      <h2 class="h5 text-uppercase mb-4">Limited in stock and Ready for Delivery</h2>
     </header>
     <div class="row">
       {% for cat in category %}
-      <div class="col-md-4 my-2"><a class="category-item" href=" {% url 'amydo:category' cat.slug %} "><img class="img img-fluid h-200" src="{{cat.image.url}}"
+      <div class="col-md-4 my-2"><a class="category-item" href=" {% url 'amydo:category' cat.slug %} ">
+        <img class="img img-fluid" src="{{cat.image.url}}"
             alt="" /><strong class="category-item-title">{{cat.title}}</strong></a>
       </div>
       {% endfor %}
@@ -46,7 +47,8 @@
       <div class="col-xl-3 col-lg-4 col-sm-6">
         <div class="product text-center">
           <div class="position-relative mb-3">
-            <div class="badge text-white bg-"></div><a class="d-block" href="{% url 'amydo:product_detail' product.slug %}"><img class="img img-fluid w-100"
+            <div class="badge text-white bg-"></div><a class="d-block" href="#pricelist" data-bs-toggle="modal">
+              <img class="img img-fluid w-100"
                 src="{{product.image.url}}" alt="..." style='height: 18rem'></a>
             <div class="product-overlay">
               <ul class="mb-0 list-inline">
@@ -59,8 +61,7 @@
               </ul>
             </div>
           </div>
-          <h6> <a class="reset-anchor" href="{% url 'amydo:product_detail' product.slug %}">{{product.name}}</a></h6>
-          <p class="small text-muted">${{product.price|floatformat:0|intcomma}}</p>
+
         </div>
       </div>
 
@@ -92,16 +93,7 @@
                 {{product.description}}
               </p>
               <div class="row align-items-stretch mb-4 gx-0">
-                <div class="col-sm-7">
-                  <div class="border d-flex align-items-center justify-content-between py-1 px-3"><span
-                      class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
-                    <div class="quantity">
-                      <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
-                      <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
-                      <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
-                    </div>
-                  </div>
-                </div>
+                
                 <div class="col-sm-5"><a class="btn btn-sm btn-dark" href="#customernotice" data-bs-toggle="modal">Order Now</a></div>
               </div>
             </div>
@@ -168,9 +160,142 @@
     </div>
   </div>
 </div>
+      {% comment %} customer notice modal {% endcomment %}
+<div class="modal fade" id="pricelist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="exampleModalLabel">Best Price Just for You</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <p>
+        AVAILABLE :
+<br>
 
-      {% endfor %}
+🛑  ❄️❄️COCAINE❄️❄️
+<br>
+HIGH PUREST (> 90 -96% <)
+<br>
+<ul>
+  <li>5G   350chf/Btc</li>
+  <li>10G 650chf/Btc</li>
+  <li>25G  1650chf/Btc</li>
+  <li>500G 17.500chf/Btc </li>
+  <li>1KG  35.500chf/Btc</li>
+</ul>
+<br>
+🛑 HASH / HASHISH :
+<br>
+<ul>
+  <li> -Nicole kush</li>
+  <li> -Ketama</li>
+</ul>
+<ul>
+  <li> 50G   300chf</li>
+  <li> 100G  550chf</li>
+</ul>
+
+🛑 LSD (Acid) 200-500ug: 🌈
+<ul>
+  <li>10stk   100chf</li>
+  <li>23stk   200chf</li>
+  <li>50stk   400chf</li>
+</ul>
+<br>
+
+🛑 FAKE 100- 50€ NOTES
+<ul>
+  <li>20 Notes 300chf</li>
+  <li>40 Notes 600chf</li>
+</ul>
+<br>
+🛑 Mephedrone 4mmc meow, 
+
+S KETAMINE: 💉
+<ul>
+  <li>10g    350chf</li>
+  <li>20g    600chf</li>
+  <li>35g    950chf</li>
+  <li>50g    1400€chf</li>
+  <li>100g   2600chf</li>
+</ul>
+<br>
+🛑 XTC 💊 Audi 319mg
+<ul>
+  <li>10pills    50chf</li>
+  <li>22 pills 100chf</li>
+  <li>45pills   200chf</li>
+</ul>
+<br>
+🛑 SPEED: ⚡
+<ul>
+  <li>14g    200chf</li>
+  <li>28g   400chf</li>
+  <li>56g   800chf</li>
+  <li>112g   1400chf</li>
+  <li>500g    3800chf</li>
+</ul>
+<br>
+🛑 METH / CRYSTAL METH: ❄
+<ul>
+  <li>5g     300chf</li>
+  <li>10g    600chf</li>
+  <li>25g    1500chf</li>
+  <li>50g    3000chf</li>
+</ul>
+<br>
+🛑 M.D.M.A: ( 40€ X GRAMS )
+<ul>
+  <li>10g   400chf</li>
+  <li>20g   800chf</li>
+  <li>25g   1000chf</li>
+  <li>50g   1850chf</li>
+</ul>
+<br>
+🛑 HEROIN " SUGAR BROWN "
+<ul>
+  <li>1G   40chf</li>
+  <li>10G   350chf </li>
+</ul>
+<br>
+🛑 HEROINE "WHITE"
+(From Asiatic connection)
+<ul>
+  <li>1G   60chf </li>
+  <li>10G  500chf</li>
+</ul>
+<br>
+Bestellvorgang: 1- Produktname und Menge 2- Nehmen Sie die Zahlung Ihrer Wahl unter den angebotenen vor 3- Geben Sie uns die Lieferadresse an
+<br>
+<ul>
+  <li>Bitcoin... Payment👍</li>
+  <li>Steamcard 👍</li>
+  <li>ETH👍</li>
+  <li>USDT👍</li>
+  <li>ITunes 👍</li>
+  <li>Amazon card 👍</li>
+  <li>Paypal freinds and familly transfert 👍</li>
+</ul>
+
+       </p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-primary" href="{% url 'amydo:product_detail' product.slug %}">See Details</a>
+       
+          <a type="button" class="btn btn-success"
+            href="https://api.whatsapp.com/send?phone=00971552055696&text=hey,%20I%20want%20_________." target='_blank'>
+            Continue
+          </a>
       
+      </div>
+    </div>
+  </div>
+</div>
+      {% endfor %}
+
     </div>
   </section>
   <!-- SERVICES-->

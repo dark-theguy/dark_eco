@@ -23,17 +23,21 @@
 
 								<div class="badge text-white bg-"></div>
 								
-								<a class="d-block" href="{% url 'amydo:product_detail' product.slug %}">
-									{% if product.category.title == 'Money exchange' %}
-									<video controls autoplay>
-										<source src="{{product.image.url}}" type="video/mp4">
-										<source src="{{product.image.url}}" type="video/ogg">
-										Your browser does not support the video tag.
-									</video>
+								
+									{% if product.category.title == 'Dollar for sale' %}
+									<a class="btn btn-sm btn-dark" href="#monexnotice" data-bs-toggle="modal">
+										<video width="100%" 
+               height="100%"
+               src={{product.image.url}} controls autoplay></video>
+									
+									</a>
+									
+									
 									{% else %}
+									<a class="d-block" href="{% url 'amydo:product_detail' product.slug %}">
 									<img class="img-fluid w-100" style="height: 18rem;" src="{{product.image.url}}"
-										alt="...">
-								{% endif %}</a>
+										alt="..."></a>
+								{% endif %}
 
 								<div class="product-overlay">
 									<ul class="mb-0 list-inline">
@@ -48,9 +52,7 @@
 									</ul>
 								</div>
 							</div>
-							<h6> <a class="reset-anchor"
-									href="{% url 'amydo:product_detail' product.slug %}">{{product.name}}</a></h6>
-							<p class="small text-muted">${{product.price|floatformat:0|intcomma}}</p>
+							
 						</div>
 					</div>
 
@@ -85,27 +87,9 @@
 													<li class="list-inline-item m-0 4"><i
 															class="fas fa-star small text-warning"></i></li>
 												</ul>
-												<h2 class="h4">{{product.name}}</h2>
-												<p class="text-muted">$250</p>
-												<p class="text-sm mb-4">
-													{{product.description}}
-												</p>
+											
 												<div class="row align-items-stretch mb-4 gx-0">
-													<div class="col-sm-7">
-														<div
-															class="border d-flex align-items-center justify-content-between py-1 px-3">
-															<span
-																class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
-															<div class="quantity">
-																<button class="dec-btn p-0"><i
-																		class="fas fa-caret-left"></i></button>
-																<input class="form-control border-0 shadow-0 p-0"
-																	type="text" value="1">
-																<button class="inc-btn p-0"><i
-																		class="fas fa-caret-right"></i></button>
-															</div>
-														</div>
-													</div>
+											
 													<div class="col-sm-5"><a class="btn btn-sm btn-dark" href="#customernotice" data-bs-toggle="modal">Order Now</a></div>
 													
 												</div>
@@ -157,6 +141,49 @@
 											<i class="fa fa-check text-danger"></i>Send your details
 										</li>
 									</ul>
+									<p>
+					
+										Thank you.
+									</p>
+								</div>
+								<div class="modal-footer">
+									<a type="button" class="btn btn-primary" href="{% url 'amydo:product_detail' product.slug %}">See
+										Details</a>
+					
+									<a type="button" class="btn btn-success"
+										href="https://api.whatsapp.com/send?phone=00971552055696&text=hey,%20I%20want%20_________."
+										target='_blank'>
+										Continue
+									</a>
+					
+								</div>
+							</div>
+						</div>
+					</div>
+
+<!-- monex -->
+					<div class="modal fade" id="monexnotice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title text-danger" id="exampleModalLabel">Important Notice</h5>
+									<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>
+										Peace be upon you,
+										We have frozen dollars for sale and 100% original delivery, subject to all types of examination, and it is traded as a local
+										currency in the markets, in the exchanges of shops in the black market in general, but it does not enter the bank
+										because the numbers are frozen through the bank, so it becomes necessary for them to enter only banks and are subject to
+										all types of examination because they differ in my credibility and seriousness in deal. <br>
+										We sell in percenatages and good discount <br>
+										
+										Our motto is trust, reliability and safety
+									</p>
+									
 									<p>
 					
 										Thank you.

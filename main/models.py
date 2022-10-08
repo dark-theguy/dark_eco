@@ -24,20 +24,11 @@ class SubCategory(models.Model):
 		return self.title
 
 class Product(models.Model):
-	owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-	name = models.CharField(max_length=200)
+	name = models.CharField(max_length=200, null =True, blank = True)
 	category =models.ForeignKey(Category, on_delete=models.CASCADE)
 	subcategory =models.ForeignKey(SubCategory, on_delete=models.CASCADE)
 	image = models.FileField(upload_to='products/')
-	price = models.FloatField(default=0)
 	slug =  AutoSlugField(populate_from='name')
-	description = models.TextField()
-	quantity = models.IntegerField(default=0)
-	contact = models.BigIntegerField(null=True, blank=True)
-	view_count = models.PositiveIntegerField(default=0)
-	date_created = models.DateTimeField(default=now)
-
-
 	def __str__(self):
 		return self.name
 
