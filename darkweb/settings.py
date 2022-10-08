@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'darkweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql",
+        'ENGINE': "django.db.backends.postgresql_psycopg2",
         'HOST': "db.ltsnrgljkrmrxwbrfhhj.supabase.co",
         'NAME': "postgres",
         'USER': "postgres",
